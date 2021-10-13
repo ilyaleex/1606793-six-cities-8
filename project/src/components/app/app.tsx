@@ -1,4 +1,4 @@
-import MainPage from '../main/main';
+import MainPage from '../main-page/main-page';
 
 function App(): JSX.Element {
   return <MainPage />;
