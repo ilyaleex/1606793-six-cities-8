@@ -1,11 +1,11 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {AppRoute} from '../../const';
-import MainPage from '../main-page/main-page';
-import SignIn from '../sign-in/sign-in';
 import Favorites from '../favorites/favorites';
-import Property from '../property/property';
+import MainPage from '../main-page/main-page';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
+import Property from '../property/property';
 import PrivateRoute from '../private-route/private-route';
+import SignIn from '../sign-in/sign-in';
 
 function App(): JSX.Element {
   return (
