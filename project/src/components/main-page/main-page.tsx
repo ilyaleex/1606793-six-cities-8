@@ -1,6 +1,11 @@
 import CityPlaceCard from '../place-card/place-card';
+import {Offer} from '../../types/offer';
 
-function MainPage(): JSX.Element {
+type CardProp = {
+  offer: Offer;
+}
+
+function MainPage({offer}: CardProp): JSX.Element {
   return (
     <div>
       <meta charSet="utf-8" />
@@ -98,12 +103,12 @@ function MainPage(): JSX.Element {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  <CityPlaceCard />
-                  <CityPlaceCard />
-                  <CityPlaceCard />
-                  <CityPlaceCard />
-                  <CityPlaceCard />
-                  <CityPlaceCard />
+                  <CityPlaceCard offer={offer}/>
+                  <CityPlaceCard offer={offer}/>
+                  <CityPlaceCard offer={offer}/>
+                  <CityPlaceCard offer={offer}/>
+                  <CityPlaceCard offer={offer}/>
+                  <CityPlaceCard offer={offer}/>
                 </div>
               </section>
               <div className="cities__right-section">

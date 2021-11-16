@@ -1,4 +1,10 @@
-function CityPlaceCard(): JSX.Element {
+import {Offer} from '../../types/offer';
+
+type CardProps = {
+  offer: Offer;
+}
+
+function CityPlaceCard({offer}: CardProps): JSX.Element {
   return (
     <article className="cities__place-card place-card">
       <div className="place-card__mark">
@@ -6,13 +12,13 @@ function CityPlaceCard(): JSX.Element {
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src="../project/public/img/apartment-01.jpg" width={260} height={200} alt="Place image" />
+          <img className="place-card__image" src="../project/public/img/{offer.picture}" width={260} height={200} alt="Place image" />
         </a>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">€120</b>
+            <b className="place-card__price-value">€{offer.price}</b>
             <span className="place-card__price-text">/&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
@@ -24,14 +30,14 @@ function CityPlaceCard(): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: '80%'}} />
+            <span style={{width: '{offer.stars}%'}} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">Beautiful &amp; luxurious apartment at great location</a>
+          <a href="#">{offer.description}</a>
         </h2>
-        <p className="place-card__type">Apartment</p>
+        <p className="place-card__type">{offer.type}</p>
       </div>
     </article>
   );

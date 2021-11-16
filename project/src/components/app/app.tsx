@@ -6,13 +6,18 @@ import NotFoundScreen from '../not-found-screen/not-found-screen';
 import Property from '../property/property';
 import PrivateRoute from '../private-route/private-route';
 import SignIn from '../sign-in/sign-in';
+import {Offer} from '../../types/offer';
 
-function App(): JSX.Element {
+type AppProps = {
+  offer: Offer;
+}
+
+function App({offer}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.Main}>
-          <MainPage />
+          <MainPage offer={offer} />
         </Route>
         <Route exact path={AppRoute.SignIn}>
           <SignIn />
